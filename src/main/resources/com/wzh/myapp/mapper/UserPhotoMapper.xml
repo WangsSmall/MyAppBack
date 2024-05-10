@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wzh.myapp.mapper.UserPhotoMapper">
+
+    <resultMap id="BaseResultMap" type="com.wzh.myapp.model.domain.UserPhoto">
+            <id property="userPhotoId" column="user_photo_id" jdbcType="BIGINT"/>
+            <result property="userId" column="user_id" jdbcType="BIGINT"/>
+            <result property="photoId" column="photo_id" jdbcType="BIGINT"/>
+            <result property="cover" column="cover" jdbcType="VARCHAR"/>
+            <result property="description" column="description" jdbcType="VARCHAR"/>
+            <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="updateTime" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="isDeleted" column="is_deleted" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_photo_id,user_id,photo_id,
+        cover,description,create_time,
+        update_time,is_deleted
+    </sql>
+</mapper>

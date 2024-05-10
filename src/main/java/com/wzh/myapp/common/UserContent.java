@@ -8,4 +8,5 @@ package com.wzh.myapp.common;
  */
 public interface UserContent {
     String USER_SESSION_KEY = "userSessionKey";
+    String USER_SALT = "wang";
 }

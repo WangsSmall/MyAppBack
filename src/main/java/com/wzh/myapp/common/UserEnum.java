@@ -9,7 +9,6 @@ public enum UserEnum {
     GENDER_MALE("male"),
     GENDER_FEMALE("female"),
     GENDER_OTHER("other"),
-    USER_SALT("wang"),
     ;
 
     private final String value;

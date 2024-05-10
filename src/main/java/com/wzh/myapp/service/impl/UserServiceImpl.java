@@ -102,7 +102,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "密码和校验密码不一致");
         }
         // 加密
-        String newPass = DigestUtils.md5DigestAsHex((UserEnum.USER_SALT + userPassword).getBytes());
+        String newPass = DigestUtils.md5DigestAsHex((UserContent.USER_SALT + userPassword).getBytes());
         userRegisterRequest.setUserPassword(newPass);
 
         User user = new User();
@@ -130,7 +130,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
             throw new BusinessException(ErrorCode.PARAMS_ERROR, "参数为空");
         }
         // 校验
-        String newPass = DigestUtils.md5DigestAsHex((UserEnum.USER_SALT + userPassword).getBytes());
+        String newPass = DigestUtils.md5DigestAsHex((UserContent.USER_SALT + userPassword).getBytes());
         LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<>();
         lqw.eq(User::getUserAccount, userAccount).eq(User::getUserPassword, newPass);
         User user = userMapper.selectOne(lqw);

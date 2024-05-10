@@ -19,5 +19,9 @@ public interface UserService extends IService<User> {
 
     UserInfoResponse userLogin(UserLoginRequest userLoginRequest, HttpServletRequest request);
 
+    UserInfoResponse getSafetyUser(User user);
+
     String getCode();
+
+    int userLogout(HttpServletRequest request);
 }

@@ -23,9 +23,4 @@ public class UserLoginRequest {
      * 密码
      */
     private String userPassword;
-
-    /**
-     * 验证码
-     */
-    private String code;
 }

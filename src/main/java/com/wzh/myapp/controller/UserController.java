@@ -55,6 +55,15 @@ public class UserController {
         return ResultUtil.success(userInfoResponse);
     }
 
+    @PostMapping("/logout")
+    public BaseResponse<Integer> userLogout(HttpServletRequest request) {
+        if (request == null) {
+            throw new BusinessException(ErrorCode.NOT_LOGIN);
+        }
+        int result = userService.userLogout(request);
+        return ResultUtil.success(result);
+    }
+
     @GetMapping("/getCode")
     public BaseResponse<String> getCode() {
         String code = userService.getCode();
